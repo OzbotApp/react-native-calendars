@@ -1,4 +1,4 @@
-import {StyleSheet, Platform} from 'react-native';
+import {StyleSheet, Platform, I18nManager} from 'react-native';
 import * as defaultStyle from '../style';
 
 
@@ -94,13 +94,6 @@ export default function styleConstructor(theme = {}) {
       flexDirection: 'row',
       justifyContent: 'space-around'
     },
-    dayContainer: {
-      flex: 1, 
-      alignItems: 'center'
-    },
-    emptyDayContainer: {
-      flex: 1
-    },
     dayHeader: {
       width: 32,
       textAlign: 'center',
@@ -111,7 +104,7 @@ export default function styleConstructor(theme = {}) {
     },
     arrowImage: {
       tintColor: appStyle.arrowColor,
-      transform: commons.isRTL ? [{scaleX: -1}] : undefined
+      transform: I18nManager.isRTL ? [{scaleX: -1}] : undefined
     },
     todayButtonContainer: {
       alignItems: appStyle.todayButtonPosition === 'right' ? 'flex-end' : 'flex-start',
